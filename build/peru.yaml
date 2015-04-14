@@ -1,0 +1,6 @@
+imports:
+    build-dockerfile: build/
+
+git module build-dockerfile:
+    url: git@github.com:dockerfile/ubuntu 
+    rev: 8a24cd877f79f2f79b3bf2bc66af7e39f428ccbd
