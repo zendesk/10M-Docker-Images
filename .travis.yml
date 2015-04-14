@@ -1,0 +1,22 @@
+cache: apt
+
+install:
+  - sudo sh -c "wget -qO- https://get.docker.io/gpg | apt-key add -"
+  - sudo sh -c "echo deb http://get.docker.io/ubuntu docker main > /etc/apt/sources.list.d/docker.list"
+  - sudo sh -c "wget -qO- https://get.docker.io/builds/Linux/x86_64/docker-1.4.1.tgz |sudo tar zxf - -C /"
+  - sudo apt-get update
+  - sudo mkdir -p /var/lib/docker
+  - echo exit 101 | sudo tee /usr/sbin/policy-rc.d
+  - sudo chmod +x /usr/sbin/policy-rc.d
+  - sudo apt-get install -y slirp lxc aufs-tools cgroup-lite
+  - curl -sLo linux https://github.com/jpetazzo/sekexe/raw/master/uml
+  - chmod +x linux
+
+matrix:
+  fast_finish: true
+
+env:
+  - DIR=base
+
+script:
+  - ./linux quiet mem=2G rootfstype=hostfs rw eth0=slirp,,/usr/bin/slirp-fullbolt init=$(pwd)/uml.sh WORKDIR=$(pwd)/$DIR HOME=$HOME; exit `cat $(pwd)/$DIR/exit.status`
