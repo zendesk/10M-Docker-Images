@@ -1,0 +1,5 @@
+logstashforwarderbuilder:
+  build: .
+  volumes:
+   - ./:/build/
+
