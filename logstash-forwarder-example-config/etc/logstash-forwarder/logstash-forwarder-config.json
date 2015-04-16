@@ -1,0 +1,21 @@
+{
+    "network": {
+        "servers": [ "logs.example.com:12346" ],
+        "ssl ca": "/etc/logstash-forwarder/server.crt",
+        "timeout": 300
+    },
+    "files": [
+        {
+            "dead time": "10m",
+            "paths": [
+                "/var/log/*",
+                "/var/log/*/*",
+                "/opt/logs/*/*",
+                "/opt/logs/*"
+            ],
+            "fields": {
+                "environment": "production"
+            }
+        }
+    ]
+}
