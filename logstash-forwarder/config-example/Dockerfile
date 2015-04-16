@@ -1,4 +1,4 @@
-FROM rounds/10m-docker-images-logstash-forwarder
+FROM rounds/10m-logstash-forwarder
 MAINTAINER Ofir Petrushka ROUNDS <ofir@rounds.com>
 
 # Config config files
