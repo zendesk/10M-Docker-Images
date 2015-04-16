@@ -20,7 +20,7 @@ env:
   - DIR=git_client
   - DIR=logstash-forwarder/build
   - DIR=logstash-forwarder
-  - DIR=logstash-forwarder-example-config
+  - DIR=logstash-forwarder/config-example
 
 script:
   - ./linux quiet mem=2G rootfstype=hostfs rw eth0=slirp,,/usr/bin/slirp-fullbolt init=$(pwd)/uml.sh WORKDIR=$(pwd)/$DIR HOME=$HOME; exit `cat $(pwd)/$DIR/exit.status`
