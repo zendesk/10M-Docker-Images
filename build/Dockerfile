@@ -5,7 +5,7 @@
 #
 
 # Pull base image.
-FROM rounds/10m-docker-images-base
+FROM rounds/10m-base
 
 # Install.
 RUN \

@@ -1,4 +1,4 @@
-FROM rounds/10m-docker-images-base
+FROM rounds/10m-base
 MAINTAINER Ofir Petrushka ROUNDS <ofir@rounds.com>
 
 # Generic (should be in base images if this issue https://github.com/docker/docker/issues/3639 is ever resolved)

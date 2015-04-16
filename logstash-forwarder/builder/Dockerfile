@@ -1,6 +1,6 @@
 # Image for building logstash-forwarder with all dependencies pre-installed
 
-FROM rounds/10m-docker-images-build
+FROM rounds/10m-build
 MAINTAINER Ofir Petrushka <ofir@rounds.com>
 
 WORKDIR /tmp
