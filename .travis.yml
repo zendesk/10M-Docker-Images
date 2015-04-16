@@ -18,7 +18,7 @@ matrix:
 env:
   - DIR=base
   - DIR=git_client
-  - DIR=logstash-forwarder/build
+  - DIR=logstash-forwarder/builder
   - DIR=logstash-forwarder
   - DIR=logstash-forwarder/config-example
 
