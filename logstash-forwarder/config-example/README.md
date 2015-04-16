@@ -15,6 +15,6 @@ This would potentially allow you to have all your nodes run just one logstash fo
 The resulting image shouldi potentially be stored as a private one, not in the public docker hub.
 
 How you can use this image:
-1. Fork it and change what you need. (minimally just the 2 files mentioned above)
-2. Just read it as an example usage that is valid for most of our other images.
-3. you might still use this image with the volumes trick where you mount the config directory and change it locally on the node your deploy on.
+ 1. Fork it and change what you need. (minimally just the 2 files mentioned above)
+ 2. Just read it as an example usage that is valid for most of our other images.
+ 3. you might still use this image with the volumes trick where you mount the config directory and change it locally on the node your deploy on.
