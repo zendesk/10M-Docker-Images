@@ -5,6 +5,11 @@ This is a clean logstash forwarder container that can be auto rebuilt from sourc
 The final image is clean of the build tools.
 That is made possilbe using a seperate image for the autobuilds that does have the needed build tools.
 
+For Users
+=========
+Just add config by either inheritance or mount of /etc/logstash-forwarder, see example config and further explination here:
+
+https://github.com/rounds/10M-Docker-Images/tree/master/logstash-forwarder/config-example
 
 For Contributers
 ================
