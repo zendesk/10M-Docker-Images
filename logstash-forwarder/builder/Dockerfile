@@ -1,16 +1,9 @@
 # Image for building logstash-forwarder with all dependencies pre-installed
 
-FROM rounds/10m-build
+FROM rounds/10m-build-go
 MAINTAINER Ofir Petrushka <ofir@rounds.com>
 
 WORKDIR /tmp
-
-# TODO: Make a Go, Ruby and Go + Ruby contrainers to inherit from.
-
-# Install Go
-RUN sudo add-apt-repository "deb http://archive.ubuntu.com/ubuntu $(lsb_release -sc) universe" && \
-    sudo apt-get update
-RUN sudo apt-get -y install golang
 
 # Install ruby 2.1 for mustash depdency in Gemfile
 #RUN apt-get install -y python-software-properties
