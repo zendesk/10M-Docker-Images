@@ -18,6 +18,7 @@ env:
   - DIR=build
   - DIR=build-go
   - DIR=git_client
+  - DIR=sensu_client
   - DIR=logstash-forwarder/builder
   - DIR=logstash-forwarder
   - DIR=logstash-forwarder/config-example
