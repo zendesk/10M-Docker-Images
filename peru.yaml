@@ -4,4 +4,4 @@ imports:
 git module travis-docker-example:
     url: https://github.com/lukecyca/travis-docker-example
     pick: uml.sh
-    rev: 078d889382b4324a553813ba641e34673b6a7406
+    rev: cdf898185b4868cfb9d71bddf33c9ceb0778abd0
