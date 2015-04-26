@@ -15,12 +15,15 @@ matrix:
 
 env:
   - DIR=base
-  - DIR=build
+# Has Disk space issues in Travis
+#  - DIR=java
+  - DIR=base
   - DIR=build-go
   - DIR=git_client
   - DIR=logstash-forwarder/builder
   - DIR=logstash-forwarder
   - DIR=logstash-forwarder/config-example
+  - DIR=logstash-server
 
 script:
   - ./linux quiet mem=2G rootfstype=hostfs rw eth0=slirp,,/usr/bin/slirp-fullbolt init=$(pwd)/uml.sh WORKDIR=$(pwd)/$DIR HOME=$HOME; exit `cat $(pwd)/$DIR/exit.status`
