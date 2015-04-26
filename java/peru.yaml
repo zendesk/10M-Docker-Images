@@ -1,0 +1,7 @@
+imports:
+    java-dockerfile: .
+
+git module java-dockerfile:
+    url: git@github.com:dockerfile/java.git
+    files: oracle-java8/Dockerfile
+    rev: 926218ef9b5b6c83bb07aae9a0aaa2ba118f6372
