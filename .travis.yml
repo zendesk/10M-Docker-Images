@@ -1,3 +1,5 @@
+language: c
+
 install:
   - sudo sh -c "wget -qO- https://get.docker.io/gpg | apt-key add -"
   - sudo sh -c "echo deb http://get.docker.io/ubuntu docker main > /etc/apt/sources.list.d/docker.list"
@@ -15,8 +17,7 @@ matrix:
 
 env:
   - DIR=base
-# Has Disk space issues in Travis
-#  - DIR=java
+  - DIR=java
   - DIR=base
   - DIR=build-go
   - DIR=git_client
@@ -24,8 +25,7 @@ env:
   - DIR=logstash-forwarder/builder
   - DIR=logstash-forwarder
   - DIR=logstash-forwarder/config-example
-# Has Disk space issues in Travis
-#  - DIR=logstash-server
+  - DIR=logstash-server
 
 script:
   - ./linux quiet mem=2G rootfstype=hostfs rw eth0=slirp,,/usr/bin/slirp-fullbolt init=$(pwd)/uml.sh WORKDIR=$(pwd)/$DIR HOME=$HOME; exit `cat $(pwd)/$DIR/exit.status`
