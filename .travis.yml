@@ -26,6 +26,7 @@ env:
   - DIR=logstash-forwarder/config-example
 # Has Disk space issues in Travis
 #  - DIR=logstash-server
+  - DIR=elastic_search
 
 script:
   - ./linux quiet mem=2G rootfstype=hostfs rw eth0=slirp,,/usr/bin/slirp-fullbolt init=$(pwd)/uml.sh WORKDIR=$(pwd)/$DIR HOME=$HOME; exit `cat $(pwd)/$DIR/exit.status`
