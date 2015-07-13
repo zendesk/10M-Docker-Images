@@ -1,3 +1,5 @@
+[![](https://badge.imagelayers.io/rounds/10m-logstash-forwarder:latest.svg)](https://imagelayers.io/?images=rounds/10m-logstash-forwarder:latest 'Get your own badge on imagelayers.io')
+
 10M logstash-forwarder
 ======================
 

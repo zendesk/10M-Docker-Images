@@ -1,3 +1,5 @@
+[![](https://badge.imagelayers.io/rounds/10m-git-client:latest.svg)](https://imagelayers.io/?images=rounds/10m-git-client:latest 'Get your own badge on imagelayers.io')
+
 Git Client Docker
 =================
 This containter can be used as a small utility for fetching and updating code stored in a git repository without installing git or keys on a node.
