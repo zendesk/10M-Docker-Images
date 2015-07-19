@@ -12,5 +12,5 @@ RUN \
   /usr/share/elasticsearch/bin/plugin --install royrusso/elasticsearch-HQ && \
   /usr/share/elasticsearch/bin/plugin --install mobz/elasticsearch-head && \
   /usr/share/elasticsearch/bin/plugin --install lmenezes/elasticsearch-kopf && \
-  /usr/share/elasticsearch/bin/plugin --url https://github.com/NLPchina/elasticsearch-sql/releases/download/1.3.3/elasticsearch-sql-1.3.3.zip --install sql && \
+  /usr/share/elasticsearch/bin/plugin --url https://github.com/NLPchina/elasticsearch-sql/releases/download/1.3.4/elasticsearch-sql-1.3.4.zip --install sql && \
   /usr/share/elasticsearch/bin/plugin --install elasticsearch/elasticsearch-cloud-gce/2.5.0
