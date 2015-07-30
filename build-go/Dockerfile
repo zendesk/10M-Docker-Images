@@ -9,3 +9,7 @@ WORKDIR /tmp
 RUN sudo add-apt-repository "deb http://archive.ubuntu.com/ubuntu $(lsb_release -sc) universe" && \
     sudo apt-get update
 RUN sudo apt-get -y install golang
+
+# Default $GOPATH
+RUN mkdir /root/go
+ENV GOPATH "/root/go"
