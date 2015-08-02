@@ -8,6 +8,9 @@ RUN \
   apt-get install -y nginx && \
   rm -rf /var/lib/apt/lists/*
 
+# Disable Default website
+RUN rm /etc/nginx/sites-enabled/default
+
 # Disable self-daemonize
 RUN echo "daemon off;" >> /etc/nginx/nginx.conf
 
