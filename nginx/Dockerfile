@@ -14,4 +14,4 @@ RUN echo "daemon off;" >> /etc/nginx/nginx.conf
 EXPOSE 80 443
 
 # Define default command.
-CMD ["nginx"]
+CMD mkdir -p /var/log/nginx; nginx
