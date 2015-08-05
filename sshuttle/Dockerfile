@@ -1,5 +1,6 @@
 # This image would sshuttle a mini vpn for a single ip that also equals the remote machine ip
 # You would need to add a private ssh key to it.
+# Run this image with --cap-add NET_ADMIN
 
 # Pull base image.
 FROM rounds/10m-base
@@ -11,6 +12,6 @@ RUN \
   rm -rf /var/lib/apt/lists/*
 
 # Define default command.
-# Set REMOTE_IP, Remote_USER env variable on docker run using -e
-# docker run -e "REMOTE_IP=x.x.x.x" -e "REMOTE_USER=ubuntu"
-CMD sshuttle -r $REMOTE_USER@$REMOTE_IP $REMOTE_IP/32
+# Set REMOTE_IP, REMOTE_USER, LOCAL_IP env variable on docker run using -e
+# docker run -e "REMOTE_IP=x.x.x.x" -e "REMOTE_USER=ubuntu" -e "LOCAL_IP=x.x.x.x"
+CMD sshuttle -r $REMOTE_USER@$REMOTE_IP $LOCAL_IP/32
