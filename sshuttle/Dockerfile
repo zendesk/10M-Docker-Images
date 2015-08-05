@@ -7,10 +7,10 @@ FROM rounds/10m-base
 # Install.
 RUN \
   apt-get update && \
-  apt-get install -y sshuttle && \
+  apt-get install -y sshuttle python && \
   rm -rf /var/lib/apt/lists/*
 
 # Define default command.
-# Set REMOTE_IP env variable on docker run using -e
-# docker run -e "REMOTE_IP=x.x.x.x"
-CMD sshuttle -r root@$REMOTE_IP $REMOTE_IP/32
+# Set REMOTE_IP, Remote_USER env variable on docker run using -e
+# docker run -e "REMOTE_IP=x.x.x.x" -e "REMOTE_USER=ubuntu"
+CMD sshuttle -r $REMOTE_USER@$REMOTE_IP $REMOTE_IP/32
