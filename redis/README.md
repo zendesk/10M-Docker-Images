@@ -5,3 +5,5 @@ Redis server docker image
 
 Redis server docker image.
 Minimal redis installtion. Main usage is for Hubot brain
+ run it with shared data dir
+docker run --name redis -v /datat/redis:/data -d rounds/10m-redis
