@@ -12,6 +12,7 @@
   "hubot-devops-reactions",
   "hubot-standup-alarm",
   "hubot-alias",
+  "hubot-seen",
   "hubot-has-no-idea"
  
 ]

@@ -50,6 +50,7 @@ RUN npm install moment  --save && npm install
 RUN npm install htmlparser  --save && npm install
 RUN npm install soupselect  --save && npm install
 RUN npm install xml2js --save && npm install
+RUN npm install hubot-seen --save && npm install
 #
 # # Activate some built-in scripts
 ADD hubot/hubot-scripts.json /hubot/
