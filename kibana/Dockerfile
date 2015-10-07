@@ -12,7 +12,7 @@ WORKDIR /opt
 # Install.
 RUN \
   cd /opt && \ 
-  wget -q https://download.elastic.co/kibana/kibana/kibana-4.1.1-linux-x64.tar.gz && \
+  wget -q https://download.elastic.co/kibana/kibana/kibana-4.1.2-linux-x64.tar.gz && \
   tar xvfz kibana-*.tar.gz && \
   rm kibana-*.tar.gz
 
