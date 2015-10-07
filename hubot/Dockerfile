@@ -2,18 +2,9 @@
 # https://github.com/pgarbe/tatsu-hubo
 
 # Pull base image.
-FROM rounds/10m-base
+FROM rounds/10m-nodejs
 
 MAINTAINER Aviv Laufer, aviv@rounds.com
-RUN apt-get update && \
-    apt-get install -y software-properties-common
-
-RUN apt-get -y install expect nodejs npm python-pip
-
-RUN apt-get clean && \
-    rm -rf /var/lib/apt/lists/*
-
-RUN ln -s /usr/bin/nodejs /usr/bin/node
 
 RUN npm install -g coffee-script
 RUN npm install -g yo generator-hubot
