@@ -5,3 +5,5 @@ Base 10M docker
 This is the master branch of the tree, all other images inherit from it either directly or by cascade inheritance.
 
 Any change here should cause a cascade rebuild of the entire tree.
+
+In the future we might want to try building from coreos or another minimal image instead of ubuntu.

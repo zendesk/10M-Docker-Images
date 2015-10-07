@@ -5,4 +5,8 @@
 10M build Docker - Common build tools for dockers that need to compile / build an executable.
 Usually per language build containers will inherit from it.
 
-99% not our code, Run make to update!
+The tree under this should contain "builer" docker images that output executables.
+These images should be used in development and in automated builds.
+Production images should not be inheriting from this directly or indirectly if possible.
+
+*** 99% not our code, Run make to update! ***
