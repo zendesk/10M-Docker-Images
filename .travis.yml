@@ -1,0 +1,32 @@
+# This script is run by Travis-CI when the code is pushed to github
+
+# This run the Alpha KVM system - need to be turned on by support per repository.
+# The KVM system has docker inside..
+# https://github.com/travis-ci/docs-travis-ci-com/blob/sw-docker/user/docker.md
+dist: trusty
+
+sudo: required
+
+services:
+  - docker
+
+# Generic languge, not much extras
+language: c
+
+matrix:
+# When the first fails it all fails
+  fast_finish: true
+
+before_install:
+  - docker login -e golem@rounds.com -u roundsgolem -p jC142onQI7P758b
+
+# Don't run monitors - creates a lot of mess in production alerts.
+script:
+  - find . -xdev -type d |grep -v "\.git/"| while read line; do cd $line; docker build .; done
+
+after_script:
+  - docker logout
+
+notifications:
+  email: false
+  hipchat: 9766d5a733072e8b586dd39215322b@code
