@@ -1,7 +1,7 @@
 # This image  minimal redis image based on https://hub.docker.com/r/nhoag/redis/
 
 # Pull base image.
-FROM rounds/10m-base
+FROM rounds/10m-build
 
 MAINTAINER Aviv Laufer, aviv@rounds.com
 
@@ -12,8 +12,7 @@ ENV REDIS_URL http://download.redis.io/releases/${REDIS_ARCHIVE}
 
 WORKDIR /tmp
 
-RUN apt-get update && \
-  apt-get install -y build-essential wget && \
+RUN \
   wget -q ${REDIS_URL} && \
   wget -q https://raw.githubusercontent.com/antirez/redis-hashes/master/README && \
   cat README | grep ${REDIS_ARCHIVE} | awk '{print $4"  "$2}' | shasum -c && \
