@@ -1,4 +1,4 @@
-FROM ubuntu:latest
+FROM ubuntu:vivid
 MAINTAINER Ofir Petrushka Rounds <ofir@rounds.com>
 
 # Solves some issues and many messages in apt-get install
