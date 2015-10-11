@@ -1,3 +1,3 @@
 all:
-	cd builder && sudo docker-compose run logstashforwarderbuilder
-	sudo docker build .
+	cd builder && docker-compose run logstashforwarderbuilder
+	docker build .

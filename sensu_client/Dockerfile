@@ -4,7 +4,7 @@ MAINTAINER Ofir Petrushka ROUNDS <ofir@rounds.com>
 # Generic (should be in base images if this issue https://github.com/docker/docker/issues/3639 is ever resolved)
 VOLUME ["/var/log"]
 
-RUN wget -q http://repos.sensuapp.org/apt/pubkey.gpg -O- | sudo apt-key add - && \
+RUN wget -q http://repos.sensuapp.org/apt/pubkey.gpg -O- | apt-key add - && \
     echo "deb     http://repos.sensuapp.org/apt sensu main" > /etc/apt/sources.list.d/sensu.list && \
     apt-get update && \
     apt-get install -y sensu && \

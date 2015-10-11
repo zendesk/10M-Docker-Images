@@ -6,7 +6,7 @@ VOLUME ["/var/log"]
 
 # Here we are copying and installing the resulting package from the build docker.
 # To create the package (the makefile does it already):
-# cd builder && sudo docker-compose run logstashforwarderbuilder
+# cd builder && docker-compose run logstashforwarderbuilder
 COPY builder/logstash-forwarder_*_amd64.deb .
 
 RUN dpkg -i logstash-forwarder_*_amd64.deb && \
