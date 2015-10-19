@@ -1,10 +1,8 @@
-FROM rounds/10m-build
-MAINTAINER Ofir Petrushka
+FROM rounds/10m-base
+MAINTAINER Ory Band @ Rounds <ory@rounds.com>
 
-ENV PATH /opt/python/bin:/usr/local/bin:$PATH
-
-# Install python with setuptools and pip (pip is the most commanly used package manager for python)
+# install python, setuptools, pip
 RUN \
   apt-get update && \
   apt-get install -y python python-setuptools python-pip && \
-  rm -rf /var/lib/apt/lists/*
+  apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
