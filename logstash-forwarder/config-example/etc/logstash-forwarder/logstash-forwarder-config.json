@@ -9,9 +9,7 @@
             "dead time": "10m",
             "paths": [
                 "/var/log/*",
-                "/var/log/*/*",
-                "/opt/logs/*/*",
-                "/opt/logs/*"
+                "/var/log/*/*"
             ],
             "fields": {
                 "environment": "production"
