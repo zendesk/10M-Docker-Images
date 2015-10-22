@@ -12,15 +12,21 @@ RUN apt-get update && \
     apt-get install -y wget curl && \
     apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
-# install docker-gen
-# to use you must mount the docker api socket, READ-ONLY mode:
+# install docker-gen and dockerize
+# NOTE that docker-gen requires mounting the docker api socket, READ-ONLY mode:
 # docker run -v /var/run/docker.sock:/tmp/docker.sock:ro ...
-
-# TODO automatically download the latest release via github api
 ENV DOCKER_GEN_VERSION 0.4.3
-RUN wget https://github.com/jwilder/docker-gen/releases/download/$DOCKER_GEN_VERSION/docker-gen-linux-amd64-$DOCKER_GEN_VERSION.tar.gz && \
-    tar -C /usr/local/bin -xvzf docker-gen-linux-amd64-$DOCKER_GEN_VERSION.tar.gz && \
-    rm /docker-gen-linux-amd64-$DOCKER_GEN_VERSION.tar.gz
+ENV DOCKERIZE_VERSION v0.0.3
+
+ENV DOCKER_GEN_FILE docker-gen-linux-amd64-$DOCKER_GEN_VERSION.tar.gz
+ENV DOCKERIZE_FILE dockerize-linux-amd64-$DOCKERIZE_VERSION.tar.gz
+
+ENV DOCKER_GEN_URL https://github.com/jwilder/docker-gen/releases/download/$DOCKER_GEN_VERSION/$DOCKER_GEN_FILE
+ENV DOCKERIZE_URL https://github.com/jwilder/dockerize/releases/download/$DOCKERIZE_VERSION/$DOCKERIZE_FILE
+
+RUN wget $DOCKER_GEN_URL $DOCKERIZE_URL && \
+    tar -C /usr/local/bin -xvzf $DOCKER_GEN_FILE && tar -C /usr/local/bin -xvzf $DOCKERIZE_FILE && \
+    rm $DOCKER_GEN_FILE $DOCKERIZE_FILE
 
 # We do want to treat logs the same in all of our images.
 #VOLUME ["/var/log"] # sucks to do it so early, open issue https://github.com/docker/docker/issues/3639 volume is non-mutable between Dockerfile instruction
