@@ -9,4 +9,4 @@ RUN apt-get update && \
 RUN cd /root/ && git clone https://github.com/rounds/py-ssj.git
 RUN cd /root/py-ssj && pip install -r requirements.txt
 
-CMD cd /root/py-ssj && python pj-ssj.py
+CMD cd /root/py-ssj && python py-ssj.py
