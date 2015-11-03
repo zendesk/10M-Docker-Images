@@ -7,7 +7,7 @@ VOLUME ["/var/log"]
 RUN wget -O - http://packages.elasticsearch.org/GPG-KEY-elasticsearch | apt-key add - && \
     echo "deb http://packages.elasticsearch.org/logstash/2.0/debian stable main" > /etc/apt/sources.list.d/elasticsearch.list && \
     apt-get update && \
-    apt-get install logstash && \
+    apt-get install -y logstash && \
     apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* && \
     sed --in-place=.orig 's/.err\" &$/.err\"/g' /etc/init.d/logstash
 # The sed makes the init.d non demonized, so it can be used by docker (script contains a lot of env exports... comes with logstash install)
