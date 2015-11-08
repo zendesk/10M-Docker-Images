@@ -5,7 +5,7 @@
 #
 
 # Pull base image.
-FROM rounds/10m-elastic-search
+FROM rounds/10m-elastic-search:ElasticSearch-v1
 
 # Install Elastic Search plugins.
 RUN \
