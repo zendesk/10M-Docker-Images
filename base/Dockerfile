@@ -11,6 +11,9 @@ ENV LANG en_US.UTF-8
 ENV LANGUAGE en_US:en
 ENV LC_ALL en_US.UTF-8
 
+# solves docker/docker#9299
+ENV TERM=xterm
+
 # The cleanup presented here is repeated in many places that use apt-get install. This is used to have the cleanes image possible.
 # Pilling many commands into one RUN is used to relate to the same FS layer. (otherwise each command is done in a seperate FS which makes you write the file in one layer and delete it in another...)
 # wget and curl are something we expect in many scripts, makes sense to always have them.
