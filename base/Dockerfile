@@ -14,6 +14,9 @@ ENV LC_ALL en_US.UTF-8
 # solves docker/docker#9299
 ENV TERM=xterm
 
+# replace sh with bash
+RUN rm /bin/sh && ln -s /bin/bash /bin/sh
+
 # install essentials to most images
 RUN apt-get update && apt-get upgrade -y && \
     apt-get install -y wget curl vim && \
