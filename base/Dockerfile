@@ -1,11 +1,11 @@
 FROM ubuntu:vivid
 MAINTAINER Ofir Petrushka @ Rounds <ofir @ rounds.com>, Ory Band @ Rounds <ory @ rounds.com>
 
-# Solves some issues and many messages in apt-get install
+# solves some issues and many messages in apt-get install
 ENV DEBIAN_FRONTEND noninteractive
 
-# Set the locale
-# This avoids encoding problems in various apps
+# set the locale
+# this avoids encoding problems in various apps
 RUN locale-gen en_US.UTF-8
 ENV LANG en_US.UTF-8
 ENV LANGUAGE en_US:en
@@ -14,9 +14,7 @@ ENV LC_ALL en_US.UTF-8
 # solves docker/docker#9299
 ENV TERM=xterm
 
-# The cleanup presented here is repeated in many places that use apt-get install. This is used to have the cleanes image possible.
-# Pilling many commands into one RUN is used to relate to the same FS layer. (otherwise each command is done in a seperate FS which makes you write the file in one layer and delete it in another...)
-# wget and curl are something we expect in many scripts, makes sense to always have them.
+# install essentials to most images
 RUN apt-get update && apt-get upgrade -y && \
     apt-get install -y wget curl vim && \
     apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
@@ -37,5 +35,6 @@ RUN wget $DOCKER_GEN_URL $DOCKERIZE_URL && \
     tar -C /usr/local/bin -xvzf $DOCKER_GEN_FILE && tar -C /usr/local/bin -xvzf $DOCKERIZE_FILE && \
     rm $DOCKER_GEN_FILE $DOCKERIZE_FILE
 
-# We do want to treat logs the same in all of our images.
-#VOLUME ["/var/log"] # sucks to do it so early, open issue https://github.com/docker/docker/issues/3639 volume is non-mutable between Dockerfile instruction
+# we do want to treat logs the same in all of our images
+# see docker/docker#3639
+# VOLUME ["/var/log"]
