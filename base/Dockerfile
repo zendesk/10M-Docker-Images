@@ -17,9 +17,8 @@ ENV TERM=xterm
 # The cleanup presented here is repeated in many places that use apt-get install. This is used to have the cleanes image possible.
 # Pilling many commands into one RUN is used to relate to the same FS layer. (otherwise each command is done in a seperate FS which makes you write the file in one layer and delete it in another...)
 # wget and curl are something we expect in many scripts, makes sense to always have them.
-RUN apt-get update && \
-    apt-get upgrade -y && \
-    apt-get install -y wget curl && \
+RUN apt-get update && apt-get upgrade -y && \
+    apt-get install -y wget curl vim && \
     apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 # install docker-gen and dockerize
