@@ -1,11 +1,5 @@
-#
-# Ubuntu Dockerfile
-#
-# https://github.com/dockerfile/ubuntu
-#
-
-# Pull base image.
 FROM rounds/10m-base
+MAINTAINER Ory Band @ Rounds <ory @ rounds.com>
 
 # install generic build dependencies
 # also add multiverse (non-free) apps
@@ -18,10 +12,9 @@ RUN sed -i 's/# \(.*multiverse$\)/\1/g' /etc/apt/sources.list && \
     apt-get install -y build-essential software-properties-common git && \
     apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
-# Set environment variables.
+# set environment variables
 ENV HOME /root
 
-# Define working directory.
 WORKDIR /root
 
 CMD ["/bin/bash"]
