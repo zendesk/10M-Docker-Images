@@ -1,5 +1,5 @@
 FROM ubuntu:vivid
-MAINTAINER Ofir Petrushka @ Rounds <ofir@rounds.com>, Ory Band @ Rounds <ory@rounds.com>
+MAINTAINER Ofir Petrushka @ Rounds <ofir @ rounds.com>, Ory Band @ Rounds <ory @ rounds.com>
 
 # Solves some issues and many messages in apt-get install
 ENV DEBIAN_FRONTEND noninteractive
