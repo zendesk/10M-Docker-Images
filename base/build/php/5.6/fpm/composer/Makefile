@@ -1,0 +1,23 @@
+IMAGE_NAME=rounds/10m-php-fpm-composer:5.6
+
+all: 
+	echo 'Usage: see https://github.com/rounds/10M-Docker-Images/blob/master/base/README.md'
+
+build:
+	docker build --tag "$(IMAGE_NAME)" .
+
+build-parent:
+	$(MAKE) -C .. build-cascade
+
+build-cascade: build-parent build
+
+clean:
+	docker rmi -f $(IMAGE_NAME)
+
+clean-parent:
+	$(MAKE) -C .. clean-cascade
+
+clean-cascade: clean clean-parent
+
+run:
+	docker run --rm -it $(IMAGE_NAME) bash

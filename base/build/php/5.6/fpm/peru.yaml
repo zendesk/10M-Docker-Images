@@ -1,0 +1,9 @@
+imports:
+    php-dockerfile: .
+
+git module php-dockerfile:
+    url: git@github.com:docker-library/php.git
+    pick: 
+      - 5.6/fpm/Dockerfile
+      - 5.6/fpm/docker-php-ext*
+    rev: 5919c607c571c03b52996a92d3d0b809674d3ace
