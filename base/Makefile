@@ -1,4 +1,4 @@
-IMAGE_NAME='rounds/10m-base'
+IMAGE_NAME='zendesk/10m-base'
 
 all:
 	echo 'Usage: see https://github.com/rounds/10M-Docker-Images/blob/master/base/README.md'
@@ -15,3 +15,7 @@ clean-cascade: clean
 
 run:
 	docker run --rm -it $(IMAGE_NAME) bash
+
+zendesk:
+	find ~ -name Dockerfile -exec sed -e "s|^FROM rounds/|FROM zendesk/|" -i {} +
+	find ~ -name Makefile -exec sed -e "s|^IMAGE_NAME='rounds/|IMAGE_NAME='zendesk/|" -i {} +
