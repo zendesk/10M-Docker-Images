@@ -5,7 +5,7 @@
 #
 
 # Pull base image.
-FROM rounds/10m-elastic-search
+FROM zendesk/10m-elastic-search
 
 # Install Elastic Search plugins.
 RUN \

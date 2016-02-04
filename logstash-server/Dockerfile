@@ -1,4 +1,4 @@
-FROM rounds/10m-java
+FROM zendesk/10m-java
 MAINTAINER Ofir Petrushka ROUNDS <ofir@rounds.com>
 
 # Generic (should be in base images if this issue https://github.com/docker/docker/issues/3639 is ever resolved)

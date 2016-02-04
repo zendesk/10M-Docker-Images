@@ -3,7 +3,7 @@
 # Run this image with --cap-add NET_ADMIN
 
 # Pull base image.
-FROM rounds/10m-base
+FROM zendesk/10m-base
 
 # Install.
 RUN \

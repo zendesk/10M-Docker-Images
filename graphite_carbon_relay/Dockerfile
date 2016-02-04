@@ -1,4 +1,4 @@
-FROM rounds/10m-graphite-carbon
+FROM zendesk/10m-graphite-carbon
 MAINTAINER Ofir Petrushka
 
 COPY relay-rules.conf /etc/carbon/relay-rules.conf

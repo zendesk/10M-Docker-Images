@@ -1,4 +1,4 @@
-FROM rounds/10m-base
+FROM zendesk/10m-base
 MAINTAINER Ory Band @ Rounds <ory @ rounds.com>
 
 # install generic build dependencies

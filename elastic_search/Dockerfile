@@ -5,7 +5,7 @@
 #
 
 # Pull base image.
-FROM rounds/10m-java
+FROM zendesk/10m-java
 
 # Install.
 RUN \

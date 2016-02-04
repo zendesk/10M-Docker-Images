@@ -1,4 +1,4 @@
-FROM rounds/10m-python
+FROM zendesk/10m-python
 MAINTAINER Aviv Laufer
 
 

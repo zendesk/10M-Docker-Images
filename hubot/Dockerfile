@@ -2,7 +2,7 @@
 # https://github.com/pgarbe/tatsu-hubo
 
 # Pull base image.
-FROM rounds/10m-base
+FROM zendesk/10m-base
 
 MAINTAINER Aviv Laufer, aviv@rounds.com
 RUN apt-get update && \

@@ -1,4 +1,4 @@
-FROM rounds/10m-logstash-forwarder
+FROM zendesk/10m-logstash-forwarder
 MAINTAINER Ofir Petrushka ROUNDS <ofir@rounds.com>
 
 # Config config files

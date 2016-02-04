@@ -1,4 +1,4 @@
-FROM rounds/10m-build-go
+FROM zendesk/10m-build-go
 RUN apt-get update && \
   apt-get install  wget
 

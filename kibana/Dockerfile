@@ -5,7 +5,7 @@
 #
 
 # Pull base image.
-FROM rounds/10m-base
+FROM zendesk/10m-base
 
 WORKDIR /opt
 

@@ -1,4 +1,4 @@
-FROM rounds/10m-build-go
+FROM zendesk/10m-build-go
 
 RUN go get github.com/rounds/go-slackjira
 

@@ -1,5 +1,5 @@
 # Nginx to redirect http -> https
-FROM rounds/10m-nginx
+FROM zendesk/10m-nginx
 
 ADD files/etc /etc
 

@@ -1,4 +1,4 @@
-FROM rounds/10m-php-fpm:5.6
+FROM zendesk/10m-php-fpm:5.6
 MAINTAINER Ofir Petrushka @ Zendesk <opetrushka @ zendesk.com>
 
 # Install composer package manager

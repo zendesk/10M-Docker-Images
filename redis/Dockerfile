@@ -1,7 +1,7 @@
 # This image  minimal redis image based on https://hub.docker.com/r/nhoag/redis/
 
 # Pull base image.
-FROM rounds/10m-base
+FROM zendesk/10m-base
 
 MAINTAINER Aviv Laufer, aviv@rounds.com
 

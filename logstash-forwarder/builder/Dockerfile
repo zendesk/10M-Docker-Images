@@ -1,6 +1,6 @@
 # Image for building logstash-forwarder with all dependencies pre-installed
 
-FROM rounds/10m-build-go
+FROM zendesk/10m-build-go
 MAINTAINER Ofir Petrushka <ofir@rounds.com>
 
 WORKDIR /tmp

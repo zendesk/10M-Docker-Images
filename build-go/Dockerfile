@@ -1,6 +1,6 @@
 # Image for building software created in the GO programming language. 
 
-FROM rounds/10m-build
+FROM zendesk/10m-build
 MAINTAINER Ofir Petrushka <ofir@rounds.com>
 
 WORKDIR /tmp
