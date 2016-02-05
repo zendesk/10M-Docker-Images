@@ -1,4 +1,4 @@
-IMAGE_NAME=rounds/10m-nginx-redirect-to-ssl
+IMAGE_NAME=rounds/10m-nginx-redirect-to-http
 
 all:
 	echo 'Usage: see https://github.com/rounds/10M-Docker-Images/blob/master/base/README.md'

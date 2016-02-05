@@ -1,0 +1,4 @@
+server {
+    listen 443;
+    return 301 http://$host$request_uri;
+}
