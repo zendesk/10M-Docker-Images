@@ -19,3 +19,11 @@ run:
 zendesk:
 	find ~ -name Dockerfile -exec sed -e "s|^FROM rounds/|FROM zendesk/|" -i {} +
 	find ~ -name Makefile -exec sed -e "s|^IMAGE_NAME='rounds/|IMAGE_NAME='zendesk/|" -i {} +
+
+update:
+	git fetch
+	git resset --hard origin/master
+	git merge opetruhska/make-zendesk #make zendesk command
+	make zendesk
+	git commit -am "Make zendesk"	
+	git push -f origin/zendesk
