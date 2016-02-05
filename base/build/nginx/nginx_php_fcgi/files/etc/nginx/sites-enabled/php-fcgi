@@ -8,13 +8,9 @@ server {
 
     location / {
         root /var/www/html;
-    }
-
-   # location / {
         # URLs to attempt, including pretty ones.
-        #try_files   $uri $uri/ /index.php?$query_string;
-	
-   # }
+        try_files   $uri $uri/ /index.php?$query_string;
+    }
 
     # Remove trailing slash to please routing system.
    # if (!-d $request_filename) {
