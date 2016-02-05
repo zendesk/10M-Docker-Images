@@ -3,8 +3,10 @@ IMAGE_NAME='zendesk/10m-base'
 all:
 	echo 'Usage: see https://github.com/rounds/10M-Docker-Images/blob/master/base/README.md'
 
-build:
+.build:
 	docker build --tag "$(IMAGE_NAME)" .
+
+build: .build
 
 build-cascade: build
 
