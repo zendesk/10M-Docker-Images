@@ -18,9 +18,9 @@ ENV TERM=xterm
 RUN rm /bin/sh && ln -s /bin/bash /bin/sh
 
 # install essentials to most images
-RUN apt-get update && apt-get upgrade -y && \
-    apt-get install -y wget curl vim && \
-    apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+RUN apt-get update && \
+        apt-get install -y wget curl vim && \
+        apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 # install docker-gen and dockerize
 # NOTE that docker-gen requires mounting the docker api socket, READ-ONLY mode:
