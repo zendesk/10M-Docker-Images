@@ -1,17 +1,12 @@
-# This image would sshuttle a mini vpn for a single ip that also equals the remote machine ip
-# You would need to add a private ssh key to it.
-# Run this image with --cap-add NET_ADMIN
+FROM rounds/python-alpine
+MAINTAINER Ory Band @ Rounds <ory@rounds.com>
 
-# Pull base image.
-FROM rounds/10m-base
+RUN apk add -qu --no-cache iptables openssh
+RUN pip install -q --no-cache-dir sshuttle
 
-# Install.
-RUN \
-  apt-get update && \
-  apt-get install -y sshuttle python && \
-  rm -rf /var/lib/apt/lists/*
+ENV LOCAL_IP ""
+ENV SUBNET_MASK 0
+ENV REMOTE_IP ""
+ENV REMOTE_USER ""
 
-# Define default command.
-# Set REMOTE_IP, REMOTE_USER, LOCAL_IP env variable on docker run using -e
-# docker run -e "REMOTE_IP=x.x.x.x" -e "REMOTE_USER=ubuntu" -e "LOCAL_IP=x.x.x.x"
-CMD sshuttle -r $REMOTE_USER@$REMOTE_IP $LOCAL_IP/32
+CMD sshuttle -r $REMOTE_USER@$REMOTE_IP $LOCAL_IP/$SUBNET_MASK
