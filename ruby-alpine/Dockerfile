@@ -18,7 +18,7 @@ RUN cd /tmp \
     && cd -
 
 # gosu for running as non-root
-RUN apk add -qu --no-cache -t .fetch-deps dpkg \
+RUN apk add -qU --no-cache -t .fetch-deps dpkg \
     && curl -o /usr/local/bin/gosu -fsSL "https://github.com/tianon/gosu/releases/download/1.7/gosu-$(dpkg --print-architecture)" \
     && chmod +x /usr/local/bin/gosu \
     && apk del -q .fetch-deps
