@@ -1,24 +1,13 @@
 FROM ruby:2.3-alpine
 MAINTAINER Ory Band @ Rounds <ory@rounds.com>
 
-# docker-gen and dockerize for configuration templates
-ENV DOCKER_GEN_VERSION 0.4.3
+# dockerize for configuration templates
 ENV DOCKERIZE_VERSION v0.0.3
-
-ENV DOCKER_GEN_FILE docker-gen-linux-amd64-$DOCKER_GEN_VERSION.tar.gz
 ENV DOCKERIZE_FILE dockerize-linux-amd64-$DOCKERIZE_VERSION.tar.gz
-ENV DOCKER_GEN_URL https://github.com/jwilder/docker-gen/releases/download/$DOCKER_GEN_VERSION/$DOCKER_GEN_FILE
 ENV DOCKERIZE_URL https://github.com/jwilder/dockerize/releases/download/$DOCKERIZE_VERSION/$DOCKERIZE_FILE
 
 RUN cd /tmp \
-    && wget -q $DOCKER_GEN_URL $DOCKERIZE_URL \
-    && tar -zxf $DOCKER_GEN_FILE -C /usr/local/bin \
+    && wget -q $DOCKERIZE_URL \
     && tar -zxf $DOCKERIZE_FILE -C /usr/local/bin \
-    && rm $DOCKER_GEN_FILE $DOCKERIZE_FILE \
+    && rm $DOCKERIZE_FILE \
     && cd -
-
-# gosu for running as non-root
-RUN apk add -qU --no-cache -t .fetch-deps dpkg \
-    && curl -o /usr/local/bin/gosu -fsSL "https://github.com/tianon/gosu/releases/download/1.7/gosu-$(dpkg --print-architecture)" \
-    && chmod +x /usr/local/bin/gosu \
-    && apk del -q .fetch-deps
