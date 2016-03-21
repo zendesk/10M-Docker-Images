@@ -13,4 +13,4 @@ RUN \
 # Define default command.
 # Set REMOTE_IP env variable on docker run using -e
 # docker run -e "REMOTE_IP=x.x.x.x"
-CMD sshuttle -r root@$REMOTE_IP $REMOTE_IP/32
+CMD sshuttle -r $REMOTE_USER@$REMOTE_IP $REMOTE_IP/32
