@@ -1,6 +1,9 @@
 FROM rounds/python-alpine
 MAINTAINER Ory Band @ Rounds <ory@rounds.com>
 
+# the latest sshuttle versions have weird unexpected bugs
+# currently we're using an old (2012) version
+# which doesn't even supports pip - so we have to use git clone
 ENV SSHUTTLE_TAG sshuttle-0.54
 
 RUN apk add -qU --no-cache iptables openssh
