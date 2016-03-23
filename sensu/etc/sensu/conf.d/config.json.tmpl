@@ -1,0 +1,48 @@
+{
+  "api": {
+    "bind": "{{ .Env.SENSU_API_BIND }}",
+    "host": "{{ .Env.SENSU_API_HOST }}",
+    "port": {{ .Env.SENSU_API_PORT }}
+  },
+  "transport": {
+    "name": "{{ .Env.SENSU_TRANSPORT_NAME }}",
+    "reconnect_on_error": {{ .Env.SENSU_TRANSPORT_RECONNECT_ON_ERROR }}
+  },
+  "client": {
+    "name": "{{ .Env.SENSU_CLIENT_NAME }}",
+    "address": "{{ .Env.SENSU_CLIENT_ADDRESS }}",
+    "safe_mode": {{ .Env.SENSU_CLIENT_SAFE_MODE }},
+    "redact": {{ .Env.SENSU_CLIENT_REDACT }},
+    "subscriptions": {{ .Env.SENSU_CLIENT_SUBSCRIPTIONS }},
+    "keepalive": {
+      "handlers": {{ .Env.SENSU_CLIENT_KEEPALIVE_HANDLERS }},
+      "thresholds": {
+        "warning": {{ .Env.SENSU_CLIENT_KEEPALIVE_THRESHOLDS_WARNING }},
+        "critical": {{ .Env.SENSU_CLIENT_KEEPALIVE_THRESHOLDS_CRITICAL }}
+      }
+    },
+    "socket": {
+      "bind": "{{ .Env.SENSU_CLIENT_SOCKET_BIND }}",
+      "port": {{ .Env.SENSU_CLIENT_SOCKET_PORT }}
+    }
+  },
+  "rabbitmq": {
+    "host": "{{ .Env.SENSU_RABBITMQ_HOST }}",
+    "port": {{ .Env.SENSU_RABBITMQ_PORT }},
+    "user": "{{ .Env.SENSU_RABBITMQ_USER}}",
+    "password": "{{ .Env.SENSU_RABBITMQ_PASSWORD }}",
+    "vhost": "{{ .Env.SENSU_RABBITMQ_VHOST }}",
+    "prefetch": {{ .Env.SENSU_RABBITMQ_PREFETCH }}{{ if ne .Env.SENSU_RABBITMQ_SSL_PRIVATE_KEY_FILE "" }},
+    "ssl" : {
+      "private_key_file": "{{ .Env.SENSU_RABBITMQ_SSL_PRIVATE_KEY_FILE }}",
+      "cert_chain_file": "{{ .Env.SENSU_RABBITMQ_SSL_CERT_CHAIN_FILE }}"
+    }{{ end }}
+  },
+  "redis": {
+    "host": "{{ .Env.SENSU_REDIS_HOST }}",
+    "port": {{ .Env.SENSU_REDIS_PORT }},
+    "db": {{ .Env.SENSU_REDIS_DB }},
+    "auto_reconnect": {{ .Env.SENSU_REDIS_AUTO_RECONNECT }},
+    "reconnect_on_error": {{ .Env.SENSU_REDIS_RECONNECT_ON_ERROR }}
+  }
+}
