@@ -31,5 +31,5 @@ if [ "$APP" != "client" ]; then until [ "$( (printf "PING\n"; sleep .1) | nc $SE
 # sensu
 bundle exec sensu-$APP \
     -d /etc/sensu/conf.d \
-    -l $LOG_FILE \
-    -L $LOG_LEVEL
+    -l $SENSU_LOG_FILE \
+    -L $SENSU_LOG_LEVEL
