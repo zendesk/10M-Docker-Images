@@ -6,7 +6,7 @@ This directory includes a Docker image for Sensu, based on the [Ruby Alpine Linu
 
  - The same image is used for all Sensu apps: `sensu-client`, `sensu-server`, and `sensu-api`.
  The image's [entrypoint.sh](tmp/entrypoint.sh) receives the app to execute as a parameter.
- - Community [sensu-plugins][sensu-plugins] that we're using, managed via a [Gemfile][opt/sensu/Gemfile].
+ - Community [sensu-plugins][sensu-plugins] that we're using, managed via a [Gemfile](opt/sensu/Gemfile).
 
 
 [website]: https://sensuapp.org/
