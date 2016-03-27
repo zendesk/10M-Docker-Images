@@ -12,7 +12,7 @@
     "name": "{{ .Env.SENSU_CLIENT_NAME }}",
     "address": "{{ .Env.SENSU_CLIENT_ADDRESS }}",
     "safe_mode": {{ .Env.SENSU_CLIENT_SAFE_MODE }},
-    "redact": {{ .Env.SENSU_CLIENT_REDACT }},
+    "redact": [ {{ .Env.SENSU_CLIENT_REDACT }} ],
     "subscriptions": [ {{ .Env.SENSU_CLIENT_SUBSCRIPTIONS }} ],
     "keepalive": {
       "handlers": [ {{ .Env.SENSU_CLIENT_KEEPALIVE_HANDLERS }} ],
