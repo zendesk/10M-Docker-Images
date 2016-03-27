@@ -15,7 +15,7 @@
     "redact": {{ .Env.SENSU_CLIENT_REDACT }},
     "subscriptions": [ {{ .Env.SENSU_CLIENT_SUBSCRIPTIONS }} ],
     "keepalive": {
-      "handlers": {{ .Env.SENSU_CLIENT_KEEPALIVE_HANDLERS }},
+      "handlers": [ {{ .Env.SENSU_CLIENT_KEEPALIVE_HANDLERS }} ],
       "thresholds": {
         "warning": {{ .Env.SENSU_CLIENT_KEEPALIVE_THRESHOLDS_WARNING }},
         "critical": {{ .Env.SENSU_CLIENT_KEEPALIVE_THRESHOLDS_CRITICAL }}
