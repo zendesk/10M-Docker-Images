@@ -91,10 +91,12 @@ WORKDIR /opt/sensu
 #
 # this will result in dockerhub building using updated Gemfile.lock,
 # instead of having to regenerate it (error prone, slow)
-COPY /opt/sensu/Gemfile* /opt/sensu/
+COPY /opt/sensu/Gemfile /opt/sensu/
 # nokogiri is an aws dependency
-RUN bundle config build.nokogiri --use-system-libraries \
-    && bundle install --jobs 10 --quiet --without development test
+RUN apk add -qU --no-cache -t .fetch-deps git \
+    && bundle config build.nokogiri --use-system-libraries \
+    && bundle install --jobs 10 --quiet --without development test \
+    && apk del -q .fetch-deps
 
 # configuration template using environment variables
 COPY etc/sensu/conf.d/config.json.tmpl /etc/sensu/conf.d/
