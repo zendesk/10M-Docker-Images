@@ -41,8 +41,8 @@ ENV SENSU_API_BIND=0.0.0.0 \
     SENSU_REDIS_AUTO_RECONNECT=true \
     SENSU_REDIS_RECONNECT_ON_ERROR=false \
 
-    LOG_FILE=/dev/stdout \
-    LOG_LEVEL=warn
+    SENSU_LOG_FILE=/dev/stdout \
+    SENSU_LOG_LEVEL=warn
 
 # dockerize for configuration templates
 ENV DOCKERIZE_VERSION v0.0.3
