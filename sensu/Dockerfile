@@ -42,7 +42,7 @@ ENV SENSU_API_BIND=0.0.0.0 \
     SENSU_REDIS_RECONNECT_ON_ERROR=false \
 
     LOG_FILE=/dev/stdout \
-    LOG_LEVEL=error
+    LOG_LEVEL=warn
 
 # dockerize for configuration templates
 ENV DOCKERIZE_VERSION v0.0.3
