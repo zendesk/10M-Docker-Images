@@ -18,10 +18,7 @@ case "$1" in
 esac
 
 # parse configuration templates
-for tmpl in /etc/sensu/conf.d/*.tmpl; do
-    dockerize -template $tmpl:${tmpl%%.tmpl} true
-    rm -f $tmpl
-done
+for tmpl in /etc/sensu/conf.d/*.tmpl; do dockerize -template $tmpl:${tmpl%%.tmpl} true; done
 
 # wait for rabbitmq, redis to be ready
 until $(nc -z $SENSU_RABBITMQ_HOST $SENSU_RABBITMQ_PORT); do sleep 1; done
