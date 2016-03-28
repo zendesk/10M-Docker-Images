@@ -339,7 +339,7 @@ GEM
       sensu-plugin (= 1.2.0)
     sensu-plugins-uptime-checks (0.0.3)
       sensu-plugin (= 1.2.0)
-    sensu-plugins-victorops (0.0.3)
+    sensu-plugins-victorops (0.1.0)
       json (= 1.8.2)
       sensu-plugin (= 1.2.0)
     sensu-plugins-wordpress (0.0.2)
@@ -418,7 +418,7 @@ DEPENDENCIES
   sensu-plugins-syslog-ng (= 0.0.2)
   sensu-plugins-uchiwa (= 0.0.3)
   sensu-plugins-uptime-checks (= 0.0.3)
-  sensu-plugins-victorops (= 0.0.3)
+  sensu-plugins-victorops (= 0.1.0)
   sensu-plugins-wordpress (= 0.0.2)
   sensu-plugins-xmpp (= 0.0.3)
 
