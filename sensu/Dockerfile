@@ -101,6 +101,9 @@ RUN apk add -qU --no-cache -t .fetch-deps git \
 # configuration template using environment variables
 COPY etc/sensu/conf.d/config.json.tmpl /etc/sensu/conf.d/
 
+# api port
+EXPOSE 4567
+
 # logs
 VOLUME ["/var/log/sensu/client", "/var/log/sensu/server", "/var/log/sensu/api"]
 
