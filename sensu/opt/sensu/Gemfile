@@ -2,6 +2,10 @@ source 'https://rubygems.org'
 
 gem 'sensu', '0.22.2'
 
+# status page dependency, see
+# https://github.com/sensu-plugins/sensu-plugins-statuspage#notes
+gem 'redphone', '0.0.6', :github => 'portertech/redphone', :ref => 'cf5373df670263b25e7ab425c17ea773e66bdd85'
+
 gem 'sensu-plugins-aws', '1.2.0'
 gem 'sensu-plugins-couchbase', '0.2.0'
 gem 'sensu-plugins-cpu-checks', '0.0.4'

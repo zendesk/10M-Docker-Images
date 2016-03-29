@@ -1,3 +1,11 @@
+GIT
+  remote: git://github.com/portertech/redphone.git
+  revision: cf5373df670263b25e7ab425c17ea773e66bdd85
+  ref: cf5373df670263b25e7ab425c17ea773e66bdd85
+  specs:
+    redphone (0.0.6)
+      json
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -199,8 +207,6 @@ GEM
     rack-protection (1.5.3)
       rack
     redis (3.2.1)
-    redphone (0.0.6)
-      json
     rest-client (1.8.0)
       http-cookie (>= 1.0.2, < 2.0)
       mime-types (>= 1.16, < 3.0)
@@ -383,6 +389,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  redphone (= 0.0.6)!
   sensu (= 0.22.2)
   sensu-plugins-aws (= 1.2.0)
   sensu-plugins-couchbase (= 0.2.0)
