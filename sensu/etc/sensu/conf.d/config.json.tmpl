@@ -43,6 +43,7 @@
     "port": {{ .Env.SENSU_REDIS_PORT }},
     "db": {{ .Env.SENSU_REDIS_DB }},
     "auto_reconnect": {{ .Env.SENSU_REDIS_AUTO_RECONNECT }},
-    "reconnect_on_error": {{ .Env.SENSU_REDIS_RECONNECT_ON_ERROR }}
+    "reconnect_on_error": {{ .Env.SENSU_REDIS_RECONNECT_ON_ERROR }}{{ if ne .Env.SENSU_REDIS_PASSWORD "" }},
+    "password": "{{ .Env.SENSU_REDIS_PASSWORD }}"{{ end }}
   }
 }

@@ -23,7 +23,7 @@ for tmpl in /etc/sensu/conf.d/*.tmpl; do dockerize -template $tmpl:${tmpl%%.tmpl
 # wait for rabbitmq, redis to be ready
 until $(nc -z $SENSU_RABBITMQ_HOST $SENSU_RABBITMQ_PORT); do sleep 1; done
 # redis only for server, api
-if [ "$APP" != "client" ]; then until [ "$( (printf "PING\n"; sleep .1) | nc $SENSU_REDIS_HOST $SENSU_REDIS_PORT | tr -d '\r')" = "+PONG" ]; do sleep 1; done; fi
+if [ "$APP" != "client" ]; then until $(nc -z $SENSU_REDIS_HOST $SENSU_REDIS_PORT); do sleep 1; done; fi
 
 # sensu
 bundle exec sensu-$APP \
