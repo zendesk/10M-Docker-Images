@@ -1,0 +1,18 @@
+sudo: required
+
+language: python
+
+python:
+  - "3.3"
+  - "3.5"
+  - "3.5-dev" # 3.5 development branch
+  - "nightly" # currently points to 3.6-dev
+
+services:
+  - docker
+
+before_install:
+  - make -f include/docker_images.mk dep
+
+script:
+  - cd tests; sh all.sh
