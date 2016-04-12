@@ -16,4 +16,8 @@ clean         - Remove local image by current directory (forced) - this allows y
 clean-cascade - Removes all images cascading from here up the tree - this allows you to clean all local builds so you will grub the offical ones out of the public repos next time around.
 run           - Run the current image in bash - very usfull for testing.
 update        - On images that are reusing from public ones. This will update the local image to match the public one with the needed changes. NOTE: If on Mac/iOS need gnu-sed.
+private       - Changes all the repo to put $LOCAL_DOCKER_REGISTRY as the base instead of 'rounds'.
+push          - Build and push image on current directory.
+push-cascade  - Build and push full tree up to current direcoty.
+push-only     - push without build. (the reason default push builds is to avoid confusion when doing 'private' or similar)
 ```
