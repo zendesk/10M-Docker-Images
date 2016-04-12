@@ -6,4 +6,4 @@ git module php-dockerfile:
     pick: 
       - 5.6/Dockerfile
       - 5.6/docker-php-ext*
-    rev: 1da4310f6c3b86f7acf32b2350de3657e64e440f
+    rev: 4677ca134fe48d20c820a19becb99198824d78e3
