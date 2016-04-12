@@ -2,8 +2,8 @@ all:
 	echo 'Usage: see https://github.com/rounds/10M-Docker-Images/blob/master/base/README.md'
 
 .build:
-	if [ -a Dockerfile ]; then docker build --tag "$(IMAGE_NAME)" .; fi;
-	if [ -a cached/Dockerfile ]; then docker build --tag "$(IMAGE_NAME)" cached; fi;
+	if [ -e Dockerfile ]; then docker build --tag "$(IMAGE_NAME)" .; fi;
+	if [ -e cached/Dockerfile ]; then docker build --tag "$(IMAGE_NAME)" cached; fi;
 
 build: .build
 
@@ -11,13 +11,13 @@ build-parent:
 	$(MAKE) -C .. build-cascade
 
 clean:
-	if [ -a Dockerfile ] || [ -a cached/Dockerfile ]; then docker rmi -f "$(IMAGE_NAME)"; fi;
+	if [ -e Dockerfile ] || [ -e cached/Dockerfile ]; then docker rmi -f "$(IMAGE_NAME)"; fi;
 
 clean-parent:
 	$(MAKE) -C .. clean-cascade
 
 push-only:
-	if [ -a Dockerfile ] || [ -a cached/Dockerfile ]; then docker push "$(IMAGE_NAME)"; fi;
+	if [ -e Dockerfile ] || [ -e cached/Dockerfile ]; then docker push "$(IMAGE_NAME)"; fi;
 
 push: build push-only
 
@@ -25,7 +25,7 @@ push-parent:
 	$(MAKE) -C .. push-cascade
 
 run:
-	if [ -a Dockerfile ] || [ -a cached/Dockerfile ]; then docker run --rm -it "$(IMAGE_NAME)" bash; fi;
+	if [ -e Dockerfile ] || [ -e cached/Dockerfile ]; then docker run --rm -it "$(IMAGE_NAME)" bash; fi;
 
 dep:
 	#* Currently assuming you have docker installed, the deamon running and permissions to access it on current user
