@@ -4,26 +4,21 @@ server {
     rewrite_log on;
     error_log /var/log/nginx/localhost.error_log debug;
 
-    index           index.php;
-
     location / {
         root /var/www/html;
+        index index.php;
         # URLs to attempt, including pretty ones.
-        try_files   $uri $uri/ /index.php?$query_string;
+        try_files   $uri /index.php?$query_string;
     }
-
-    # Remove trailing slash to please routing system.
-   # if (!-d $request_filename) {
-   #     rewrite     ^/(.+)/$ /$1 permanent;
-   # }
 
     location ~ \.php(/|$) {
         rewrite ^/(.*)$ $1 last;
-        fastcgi_split_path_info ^(.+?\.php)(/.*)$;
+        fastcgi_buffers 16 16k;
+        fastcgi_buffer_size 32k;
+        fastcgi_split_path_info ^(.+?\.php)(.*)$;
         fastcgi_pass fcgi:9000;
         fastcgi_index index.php;
         include fastcgi_params;
-        fastcgi_split_path_info         ^(.+\.php)(.*)$;
-        fastcgi_param                   SCRIPT_FILENAME $fastcgi_script_name;
+        fastcgi_param SCRIPT_FILENAME $fastcgi_script_name;
     }
 }
