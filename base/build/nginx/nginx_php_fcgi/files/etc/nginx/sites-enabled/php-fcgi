@@ -2,7 +2,6 @@ server {
     listen 80;
 
     rewrite_log on;
-    error_log /var/log/nginx/localhost.error_log debug;
 
     location / {
         root /var/www/html;
